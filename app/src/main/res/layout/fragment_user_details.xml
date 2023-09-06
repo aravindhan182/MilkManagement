@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="in.pdk.aravindhan.milkmanagement.ui.userdetails.UserDetailsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.userdetails.UserDetailsFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/userDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aclonica"
+            android:text="Fill user details"
+            android:textColor="@color/btn_color"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/round_corner_edittext_v2"
+            android:hint="Enter your name"
+            android:inputType="text"
+            android:padding="16dp"
+            android:text="@={viewModel.mutableUserDetailsViews.userName}"
+            app:errorText="@{viewModel.userDetailsErrorView.userNameError}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userDetails" />
+
+
+        <EditText
+            android:id="@+id/areaName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/round_corner_edittext_v2"
+            android:hint="Enter flat no, area name, landmark"
+            android:inputType="text"
+            android:padding="16dp"
+            android:text="@={viewModel.mutableUserDetailsViews.address}"
+            app:errorText="@{viewModel.userDetailsErrorView.addressError}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userName" />
+
+        <EditText
+            android:id="@+id/villageName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/round_corner_edittext_v2"
+            android:hint="Enter village name"
+            android:inputType="text"
+            android:padding="16dp"
+            android:text="@={viewModel.mutableUserDetailsViews.villageName}"
+            app:errorText="@{viewModel.userDetailsErrorView.villageNameError}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/areaName" />
+
+        <EditText
+            android:id="@+id/pincode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/round_corner_edittext_v2"
+            android:hint="Enter pincode"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="16dp"
+            android:text="@={viewModel.mutableUserDetailsViews.pinCode}"
+            app:errorText="@{viewModel.userDetailsErrorView.pinCOdeError}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/villageName" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/continueBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/round_corner_btn"
+            android:onClick="@{()->viewModel.saveUserDetails()}"
+            android:text="Save"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pincode" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

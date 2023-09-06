@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/milkReadingFragment">
+
+    <fragment
+        android:id="@+id/authenticationFragment"
+        android:name="in.pdk.aravindhan.milkmanagement.ui.authentication.registration.RegisterFragment"
+        android:label="Authentication"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_authenticationFragment_to_otpFragment"
+            app:destination="@id/otpFragment" />
+        <action
+            android:id="@+id/action_authenticationFragment_to_userDetailsFragment"
+            app:destination="@id/userDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpFragment"
+        android:name="in.pdk.aravindhan.milkmanagement.ui.authentication.opt.OtpFragment"
+        android:label="fragment_otp"
+        tools:layout="@layout/fragment_otp" >
+        <argument
+            android:name="storedVerificationId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_otpFragment_to_userDetailsFragment"
+            app:destination="@id/userDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailsFragment"
+        android:name="in.pdk.aravindhan.milkmanagement.ui.userdetails.UserDetailsFragment"
+        android:label="fragment_user_details"
+        tools:layout="@layout/fragment_user_details" >
+        <action
+            android:id="@+id/userDetails_to_milkReading"
+            app:destination="@id/milkReadingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/milkReadingFragment"
+        android:name="in.pdk.aravindhan.milkmanagement.ui.milkReading.MilkReadingFragment"
+        android:label="MilkReadingFragment" />
+</navigation>

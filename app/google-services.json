@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "435482840722",
+    "project_id": "milkmanagement-42fc0",
+    "storage_bucket": "milkmanagement-42fc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435482840722:android:b57380a431d4b66df6604b",
+        "android_client_info": {
+          "package_name": "in.pdk.aravindhan.milkmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435482840722-ihqmvvvtc3khduugu2i42f2jglrsbdm9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyicVyu9Rd_Vh_Usu_mJYxJ7J83IHWjiQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435482840722-ihqmvvvtc3khduugu2i42f2jglrsbdm9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
